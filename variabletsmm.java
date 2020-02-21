@@ -1,5 +1,5 @@
 
-public class variabletsmm{
+public class Main{
 	public static void main(String[] args){
     //byte
         System.out.println(Byte.TYPE);
