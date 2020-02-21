@@ -7,7 +7,7 @@ void show(int no1,int no2){
 }
 class Triangle{
 void show(int no1,int no2){
-    System.out.println(0.5*no1*no2);
+    System.out.println((no1*no2)/2);
 }
     
 }
@@ -21,7 +21,8 @@ public class Main
 {
 	public static void main(String[] args) {
 	int no1,no2,no;
-	System.out.println("1.Area of square\n 2.Area of triangle \n 3.Area of rectangle");
+	System.out.println("1.Area of square\t2.Area of triangle \t 3.Area of rectangle");
+	System.out.println("Enter the number:");
 	Scanner scan=new Scanner(System.in);
 	no=scan.nextInt();
 	switch(no){
