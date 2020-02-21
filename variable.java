@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class variable{
+public class Main{
     //global variable 
     static int no=1;
     public static void main(String [] args){
