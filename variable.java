@@ -5,16 +5,16 @@ public class variable{
     public static void main(String [] args){
       Scanner scan=new Scanner(System.in);
       //primitive data types && local variable 
-      System.out.println("Enter a byte number");
+      System.out.println("Enter a byte value");
       byte no1=scan.nextByte();
      
-      System.out.println("Enter a short number");
+      System.out.println("Enter a short  value");
       short no2=scan.nextShort();
      
-      System.out.println("Enter a Integer number");
+      System.out.println("Enter a Integer  value");
       int no3=scan.nextInt();
      
-      System.out.println("Enter a Long number");
+      System.out.println("Enter a Long  value");
       Long no4=scan.nextLong();
       
       System.out.println("Enter a String");
@@ -27,10 +27,10 @@ public class variable{
        String flag=scan.next();
        char flag1=flag.charAt(0);
      
-      System.out.println("Enter a float number");
+      System.out.println("Enter a float value");
       float no5=scan.nextFloat();
      
-      System.out.println("Enter a double  number");
+      System.out.println("Enter a double value");
       double  no6=scan.nextDouble();
       
       System.out.println(no1);
