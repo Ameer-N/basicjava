@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+	List<String> li= new ArrayList<String>();
+	int count=0;
+	li.add("India");
+	li.add("Russia");
+	li.add("China");
+	li.add("Japan");
+	li.add("Pakistan");
+	
+	Iterator lit=li.iterator();
+	System.out.println("using while loop \n");
+	while(lit.hasNext())
+	   System.out.println(lit.next());
+	   
+	 li.add(2,"Afganistan");
+	
+	System.out.println("\n using for each \n");
+
+	for(String str:li)
+	   System.out.println(str);
+   
+        li.remove(0);
+       System.out.println("\nAfter removing india from list:"+li);
+      Collections.sort(li);
+       System.out.println("\nAfter sorting list ascending order :"+li);
+        Collections.sort(li,Collections.reverseOrder());
+         System.out.println("\nAfter descending order list:"+li);
+   
+   
+   for(String str:li)
+        count++;
+   System.out.println("\nprogramatically calculated size:"+count);
+   System.out.println("\n using bulid in function :"+li.size());
+  
+	}
+}
