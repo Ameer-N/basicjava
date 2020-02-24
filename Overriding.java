@@ -37,7 +37,7 @@ public class Main
 	    case 2:
 	        System.out.println("Enter the height and base to find Area of triangle");
 	        no1=scan.nextInt();
-	        no2=no1;
+	        no2=scsn.nextInt();
 	        Triangle obj2=new Triangle();
 	        obj2.show(no1,no2);
 	        break;
@@ -45,7 +45,7 @@ public class Main
 	    case 3:
 	        System.out.println("Enter the length and breadth to find Area of rectangle");
 	        no1=scan.nextInt();
-	        no2=no1;
+	        no2=scan.nextInt();
 	        Rectangle obj3=new Rectangle();
 	        obj3.show(no1,no2);
 	        break;
