@@ -2,10 +2,11 @@ import java.util.*;
 public class Main{
    public static void main(String[] args){
        Scanner scan=new Scanner(System.in);
-       int mark;
+       float mark1;
        char grade='\0';
        System.out.println("Enter your mark-(0-100):");
-       mark=scan.nextInt();
+       mark1=scan.nextFloat();
+       int mark=Math.round(mark1);
        if(mark>=0 && mark<=100){
             if(mark>=90 && mark<=100){
                grade='A';
