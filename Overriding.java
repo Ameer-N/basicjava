@@ -37,7 +37,7 @@ public class Main
 	    case 2:
 	        System.out.println("Enter the height and base to find Area of triangle");
 	        no1=scan.nextInt();
-	        no2=scsn.nextInt();
+	        no2=scan.nextInt();
 	        Triangle obj2=new Triangle();
 	        obj2.show(no1,no2);
 	        break;
