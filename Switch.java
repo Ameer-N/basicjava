@@ -5,6 +5,7 @@ public class Main{
        char grade='\0';
        System.out.println("Enter your grade:(A-C or F)");
        String str=scan.next();
+       str. toUpperCase();
        grade=str.toUpperCase().charAt(0);
        
        switch(grade){
