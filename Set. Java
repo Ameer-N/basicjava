@@ -29,6 +29,9 @@ class Student
     public float gettotal() {
         return Math.round(total);
     }
+    public String getname() {
+        return name;
+    }
     public int getroll() {
         return rollno;
     }
@@ -39,7 +42,7 @@ class Student
   public String toString ()
   {
      
- return "Sudentdetails:[rank="+(rank=rank+1)+",name="+ name + ",rollno=" + rollno +",total="+total+",percentage="+Math.round(percentage)+",average="+Math.round(average)+"]\n";
+ return "Sudentdetails:[stu=" +" rank="+(rank=rank+1)+",name="+ name + ",rollno=" + rollno +",total="+total+",percentage="+Math.round(percentage)+",average="+Math.round(average)+"]\n";
   }
 }
 class   Mytotal implements Comparator<Student> {
@@ -91,12 +94,11 @@ public class Main
     while(listItr2.hasNext()){
       Student stud =(Student)listItr2.next();
          if((stud.getroll())==(roll))
-             return "Sudentdetails:[name="+ name + ",rollno=" + rollno +",total="+total+",percentage="+Math.round(percentage)+",average="+Math.round(average)+"]\n";
+           System.out.println("rollno :"+stud.getroll()+"|"+"name:"+stud.getname());
          
     }
-    
-    System.out.println("studentdetails(sorted):");
-    
+        System.out.println();
+    System.out.println("studentdetails(sorted on total):");
     Iterator itr = arr.iterator();
     while (itr.hasNext()){
       System.out.print (itr.next());
