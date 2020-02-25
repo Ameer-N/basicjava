@@ -27,14 +27,19 @@ class Student
     this.percentage=(total/600)*100;
   }
     public float gettotal() {
-        return total;
+        return Math.round(total);
     }
- 
+    public int getroll() {
+        return rollno;
+    }
+    public float getpercentage(){
+        return Math.round(percentage);
+    }
   @Override 
   public String toString ()
   {
      
- return "Sudentdetails:[stu=" +" rank="+(rank=rank+1)+",name="+ name + ",rollno=" + rollno +",total="+total+",percentage="+Math.round(percentage)+",average="+Math.round(average)+"]\n";
+ return "Sudentdetails:[rank="+(rank=rank+1)+",name="+ name + ",rollno=" + rollno +",total="+total+",percentage="+Math.round(percentage)+",average="+Math.round(average)+"]\n";
   }
 }
 class   Mytotal implements Comparator<Student> {
@@ -54,6 +59,7 @@ public class Main
     Scanner scan = new Scanner (System.in);
     System.out.println ("enter the no of student details;");
     int limit = scan.nextInt ();
+    int roll;
     Set < Student > arr= new TreeSet <> (new Mytotal());
     int i = 0;
     do
@@ -71,10 +77,30 @@ public class Main
 	Student st = new Student (rollno,name,Mark1,Mark2,Mark3,Mark4,Mark5,Mark6);
 	arr.add (st);
     }while (i < limit);
-
-    Iterator itr = arr.iterator ();
-    while (itr.hasNext ())
-      System.out.print (itr.next ());
+   System.out.println("studentdetails(unsorted):");
+    Iterator listItr =arr.iterator();
+    while(listItr.hasNext()){
+       Student stud =(Student)listItr.next();
+       System.out.println("rollno :"+stud.getroll()+"|"+"percentage:"+stud.getpercentage());
+    }
+    System.out.println();
+    System.out.println("Enter the rollnumber to be searched:");
+    roll=scan.nextInt();
+    
+    Iterator listItr2=arr.iterator();
+    while(listItr2.hasNext()){
+      Student stud =(Student)listItr2.next();
+         if((stud.getroll())==(roll))
+             return "Sudentdetails:[name="+ name + ",rollno=" + rollno +",total="+total+",percentage="+Math.round(percentage)+",average="+Math.round(average)+"]\n";
+         
+    }
+    
+    System.out.println("studentdetails(sorted):");
+    
+    Iterator itr = arr.iterator();
+    while (itr.hasNext()){
+      System.out.print (itr.next());
+    }
 
 
 
