@@ -10,8 +10,8 @@ class Student
   int Mark5=0;
   int Mark6=0;
   static int rank=0;
-
-  float average=0.0f,percentage=0.0f,total=0.0f;
+  int total;
+  float average=0.0f,percentage=0.0f;
     Student (int a, String b,int c,int d,int e,int f,int g,int h)
   {
     this.rollno = a;
@@ -26,7 +26,7 @@ class Student
     this.average=total/6;
     this.percentage=(total/600)*100;
   }
-    public float gettotal() {
+    public int gettotal() {
         return Math.round(total);
     }
     public String getname() {
@@ -48,11 +48,12 @@ class Student
 class   Mytotal implements Comparator<Student> {
    @Override
     public int compare(Student s1, Student s2){
-          if(s1.gettotal() < s2.gettotal()){
-            return 1;
-        } else {
-            return -1;
-        }
+        //   if(s1.gettotal() < s2.gettotal()){
+        //     return 1;
+        // } else {
+        //     return -1;
+        // }
+        return s1.gettotal()-s2.gettotal();
     }
 }
 public class Main
@@ -65,8 +66,9 @@ public class Main
     int roll;
     Set < Student > arr= new TreeSet <> (new Mytotal());
     int i = 0;
+    int no;
     do
-      {
+    {
 	System.out.println ("Enter " + (++i) + "  student details");
 	System.out.println ("rollno | name | Mark1  |Mark2 |Mark3 |Mark4 |Mark5 |Mark6 ");
 	int rollno = scan.nextInt ();
@@ -89,7 +91,9 @@ public class Main
     System.out.println();
     System.out.println("Enter the rollnumber to be searched:");
     roll=scan.nextInt();
-    
+    // System.out.println("Enter the Subject to be searched:");
+    // System.out.println("1.mark1 |2.mark2  |3.mark3  |4.mark4  |5.mark5  |6.mark6 ");
+    // no=scan.nextInt();
     Iterator listItr2=arr.iterator();
     while(listItr2.hasNext()){
       Student stud =(Student)listItr2.next();
@@ -103,8 +107,6 @@ public class Main
     while (itr.hasNext()){
       System.out.print (itr.next());
     }
-
-
 
 
   }
