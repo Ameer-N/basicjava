@@ -9,7 +9,9 @@ class Student
   int Mark4=0;
   int Mark5=0;
   int Mark6=0;
-  int total;
+  static int rank=0;
+
+  float average=0.0f,percentage=0.0f,total=0.0f;
     Student (int a, String b,int c,int d,int e,int f,int g,int h)
   {
     this.rollno = a;
@@ -20,22 +22,25 @@ class Student
     this.Mark4=f;
     this.Mark5=g;
     this.Mark6=h;
-    this.total=(c+d+e+f+g+h)/6;
+    this.total=c+d+e+f+g+h;
+    this.average=total/6;
+    this.percentage=(total/600)*100;
   }
-    public int gettotal() {
+    public float gettotal() {
         return total;
     }
-  
-   @Override 
+ 
+  @Override 
   public String toString ()
   {
-    return "Sudentdetails:[stu=" + name + ", rollno=" + rollno +",total"+total+"]\n";
+     
+ return "Sudentdetails:[stu=" +" rank="+(rank=rank+1)+",name="+ name + ",rollno=" + rollno +",total="+total+",percentage="+Math.round(percentage)+",average="+Math.round(average)+"]\n";
   }
 }
-class mytotal implements Comparator<Student> {
+class   Mytotal implements Comparator<Student> {
    @Override
     public int compare(Student s1, Student s2){
-          if(s1.gettotal() > s2.gettotal()){
+          if(s1.gettotal() < s2.gettotal()){
             return 1;
         } else {
             return -1;
@@ -49,7 +54,7 @@ public class Main
     Scanner scan = new Scanner (System.in);
     System.out.println ("enter the no of student details;");
     int limit = scan.nextInt ();
-    Set < Student > arr= new TreeSet <> (new mytotal());
+    Set < Student > arr= new TreeSet <> (new Mytotal());
     int i = 0;
     do
       {
