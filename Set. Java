@@ -12,17 +12,17 @@ class Student
   static int rank = 0;
   int total;
   float average = 0.0f;
-    Student (int a, String b, int c, int d, int e, int f, int g, int h)
+    Student (int rollno, String name, int mark1, int mark2, int mark3, int mark4, int mark5, int mark6)
   {
-    this.rollno = a;
-    this.name = b;
-    this.mark1 = c;
-    this.mark2 = d;
-    this.mark3 = e;
-    this.mark4 = f;
-    this.mark5 = g;
-    this.mark6 = h;
-    this.total = c + d + e + f + g + h;
+    this.rollno =rollno;
+    this.name = name ;
+    this.mark1 = mark1;
+    this.mark2 = mark2;
+    this.mark3 =mark3;
+    this.mark4 =mark4;
+    this.mark5 =mark5;
+    this.mark6 =mark6;
+    this.total =mark1+mark2+mark3+mark4+mark5+mark6;
     this.average = total / 6;
    
   }
