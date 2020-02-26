@@ -72,16 +72,13 @@ class Student
     "Sudentdetails:[rank=" + (rank =rank + 1) 
      + ",name=" + name 
      + ",rollno=" + rollno 
-     + ",total=" + total 
-     + ",rollno=" + rollno
-     + ",total=" + total 
-     + ",rollno=" + rollno 
      + ",mark1=" + mark1 
      + ",mark2=" + mark2 
      + ",mark3=" + mark3  
      + ",mark4=" + mark4  
      + ",mark5=" + mark5  
      + ",mark6=" + mark6  
+     + ",total=" + total 
      + ",average=" + Math.round (average) 
      + "]\n";
   }
@@ -206,7 +203,22 @@ class MyMark6  implements Comparator < Student >
 
   }
 }
+class Ascend implements Comparator < Student >
+{
+  @Override 
+  public int compare (Student s1, Student s2)
+  {
+    if (s1.getMark6() < s2.getMark6())
+      {
+	return 1;
+      }
+    else
+      {
+	return -1;
+      }
 
+  }
+}
 
 class Name implements Comparator < Student >
 {
@@ -230,6 +242,7 @@ public class Main
       new TreeSet <> (new Mytotal ().thenComparing (new Name ()));
     int i = 0;
     int no;
+    int order;
     do
       {
 	System.out.println ("Enter " + (++i) + "  student details");
@@ -270,7 +283,7 @@ public class Main
     System.out.println ("Enter the Subject to be searched:");
     System.out.println ("1.mark1 |2.mark2  |3.mark3  |4.mark4  |5.mark5  |6.mark6 ");
     no = scan.nextInt ();
-    scan.close();
+    
     switch(no){
         case 1:
             Set < Student > set1=new TreeSet <>(new MyMark1());
@@ -311,11 +324,25 @@ public class Main
         default:
             System.out.println("wrong subject no!");
     }
-   Iterator Itr3 = set.iterator ();
-   while (Itr3.hasNext ())
-      {
-	System.out.print (Itr3.next());
-      }
+   System.out.println ("Enter the order to be sorted 1.ascending | 2.descending:");
+   order=scan.nextInt();
+   scan.close();
+   if(order==2){
+       Iterator Itr3 = set.iterator ();
+       while (Itr3.hasNext ())
+          {
+    	System.out.print (Itr3.next());
+          }
+   }
+   else if(order==1){
+        Set < Student > set6=new TreeSet <>(new Ascend());
+       Iterator Itr3 = set.iterator ();
+       while (Itr3.hasNext ())
+          {
+    	System.out.print (Itr3.next());
+          }
+   }
+   
 
   }
 }
