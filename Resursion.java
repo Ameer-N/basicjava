@@ -7,7 +7,7 @@ public class Main{
       System.out.println("Enter the multiplication Number:");
       no=scan.nextInt();
       System.out.println(no+" multiplication Table:");
-      if(no>=0)
+      if(no>0)
           generatemul(no,i);
       else
          System.out.println("negative number found");
