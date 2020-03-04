@@ -8,7 +8,7 @@ public class Main
 	StringBuffer String_Buffer=new StringBuffer();
 	StringBuffer Return_String_Buffer=new StringBuffer();
 	String Selected_Str=null;
-	String [] String_Array={"AMEER","AJITHKUMAR","VIRATKOHLI"};
+	String [] String_Array={"JOSEPHVIJAY","AJITHKUMAR","VIRATKOHLI","ABDULKALAM","SHAHRUKHKHAN","SIVAKARTHIKEYAN"};
 	int Select_Random_String=random.nextInt(String_Array.length);
 	Selected_Str=String_Array[Select_Random_String];
     int Selected_Str_Length=Selected_Str.length();
@@ -16,7 +16,7 @@ public class Main
         String_Buffer.append("_");
     }
  
-    for (int i=0;i<(Selected_Str_Length)/3;i++){
+    for (int i=0;i<(Math.round(Selected_Str_Length)/3);i++){
         int Select_Random_String_Buffer=random.nextInt(String_Buffer.length());
        
         if(String_Buffer.charAt(Select_Random_String_Buffer)=='_'){
@@ -30,11 +30,13 @@ public class Main
           System.out.print(String_Buffer.charAt(i)+" ");
        }
        System.out.println();
-       System.out.println("you have "+(Selected_Str_Length-(Selected_Str_Length)/3)+" chances to find the word");
-       int chance=0,increment=0;
+       int chance=0,increment=1;
+        int chance2=Selected_Str_Length-(Math.round(Selected_Str_Length)/3);
         do{
         System.out.println("_____________________________________________________________");
-        System.out.println("Enter the char that you guessed:(chance:"+" "+(chance++)+")");    
+        System.out.println("you have "+(chance2--)+" chances to find the word");
+         System.out.println();
+        System.out.println("Enter the char that you guessed:(Used chance:"+" "+(chance++)+")");    
         String  User_Str=scanner.next().toUpperCase();
         char user_char=User_Str.charAt(0);
         findChar(String_Buffer,Selected_Str,user_char);
@@ -46,12 +48,14 @@ public class Main
   
         if(Selected_Str.equals(String_Buffer.toString()))
         {
+             System.out.println("_____________________________________________________________");
             System.out.println("you win!!");
             stop=1;
             break;
         }
-         }while(increment<=Selected_Str_Length-(Selected_Str_Length)/3);
+         }while(increment<=Selected_Str_Length-(Math.round(Selected_Str_Length)/3));
          if(stop==0){
+             System.out.println("_____________________________________________________________");
              System.out.println("you loss!!");
          }
 	}
@@ -65,10 +69,12 @@ public class Main
 	        
 	    }
 	    if(flag==1){
-	        System.out.println("correct guess");
+	        System.out.println("correct guess,keep going!");
+	       
 	    }
 	    else{
-	        System.out.println("wrong guess");
+	        System.out.println("wrong guess,try again!!");
+	        
 	    }
 	    return String_Buffer.toString();
 	}
