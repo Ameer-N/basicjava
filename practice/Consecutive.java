@@ -40,8 +40,7 @@ public class Consecutive {
 		if(map.containsKey(temp)) {
 			count=map.get(temp)+1;
 		}
-		else
-			map.put(temp,count);
+		map.put(temp,count);
 	}
 	private void checkConsective() {
 		String temp="";
